@@ -1,0 +1,108 @@
+{
+  "baris_mentah": 10437,
+  "kolom_mentah": 11,
+  "baris_bersih": 6352,
+  "kolom_bersih": 10,
+  "periode_awal": "2019-12-31",
+  "periode_akhir": "2026-01-29",
+  "hari_kerja": 1588,
+  "baris_dibuang_periode": 4085,
+  "missing_mentah": 1970,
+  "persen_missing_mentah": 18.88,
+  "imputasi_ffill": {
+    "Produsen": 4,
+    "Pedagang Besar": 12,
+    "Pasar Tradisional": 57,
+    "Pasar Modern": 18
+  },
+  "imputasi_total": 92,
+  "persen_kosong_terkait_libur": {
+    "Produsen": 75.0,
+    "Pedagang Besar": 58.3,
+    "Pasar Tradisional": 98.2,
+    "Pasar Modern": 16.7
+  },
+  "base_rate_libur": 20.7,
+  "uji_imputasi_mae": {
+    "Forward-fill per pasar": 1469.0,
+    "Interpolasi linear per pasar": 1189.0,
+    "Median per pasar": 12010.0,
+    "Median global": 13817.0
+  },
+  "spike_error": 1,
+  "outlier_iqr_harga": {
+    "Produsen": 108,
+    "Pedagang Besar": 100,
+    "Pasar Tradisional": 94,
+    "Pasar Modern": 70
+  },
+  "outlier_z_harga": {
+    "Produsen": 0,
+    "Pedagang Besar": 20,
+    "Pasar Tradisional": 37,
+    "Pasar Modern": 30
+  },
+  "pelanggaran_domain": 0,
+  "sel_teks_berkoma": 16909,
+  "sama_induk_persen": {
+    "Pasar Modern": 73.3,
+    "Pasar Tradisional": 100.0,
+    "Pedagang Besar": 99.2,
+    "Produsen": 100.0
+  },
+  "missing_per_kolom_mentah": {
+    "Tanggal_teks": 0,
+    "Kategori_Pasar": 0,
+    "Komoditas_teks": 0,
+    "Harga_Keriting_teks": 1970,
+    "Harga_Agregat_teks": 1995,
+    "time": 0,
+    "weather_code (wmo code)": 0,
+    "temperature_2m_mean (°C)": 0,
+    "precipitation_sum (mm)": 0,
+    "rain_sum (mm)": 0,
+    "wind_speed_10m_max (km/h)": 0
+  },
+  "missing_per_format": {
+    "NaN / sel kosong": 0,
+    "Teks '-' (tanda strip)": 3965,
+    "String kosong / spasi": 0,
+    "Teks 'nan'/'None'/'NULL'": 0,
+    "Angka 0 / negatif (harga)": 0
+  },
+  "missing_per_pasar": {
+    "Produsen": {
+      "Harga_Keriting_teks = '-'": 696,
+      "Harga_Agregat_teks = '-'": 696,
+      "implisit (tanggal tidak ada di file)": 0
+    },
+    "Pedagang Besar": {
+      "Harga_Keriting_teks = '-'": 203,
+      "Harga_Agregat_teks = '-'": 203,
+      "implisit (tanggal tidak ada di file)": 1
+    },
+    "Pasar Tradisional": {
+      "Harga_Keriting_teks = '-'": 215,
+      "Harga_Agregat_teks = '-'": 215,
+      "implisit (tanggal tidak ada di file)": 1
+    },
+    "Pasar Modern": {
+      "Harga_Keriting_teks = '-'": 856,
+      "Harga_Agregat_teks = '-'": 881,
+      "implisit (tanggal tidak ada di file)": 1
+    },
+    "TOTAL": {
+      "Harga_Keriting_teks = '-'": 1970,
+      "Harga_Agregat_teks = '-'": 1995,
+      "implisit (tanggal tidak ada di file)": 3
+    }
+  },
+  "missing_agregat_mentah": 1995,
+  "imputasi_ffill_agregat": {
+    "Produsen": 4,
+    "Pedagang Besar": 12,
+    "Pasar Tradisional": 57,
+    "Pasar Modern": 42
+  },
+  "langkah_log_cleaning": 16
+}

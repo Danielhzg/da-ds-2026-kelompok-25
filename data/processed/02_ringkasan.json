@@ -1,0 +1,169 @@
+{
+  "desk_target": {
+    "count": 6352.0,
+    "mean": 37105.28,
+    "median": 34450.0,
+    "std": 18165.97,
+    "min": 7500.0,
+    "Q1": 23500.0,
+    "Q3": 45500.0,
+    "IQR": 22000.0,
+    "max": 115500.0,
+    "skewness": 1.09,
+    "kurtosis": 1.31
+  },
+  "desk_pasar": {
+    "Produsen": {
+      "mean": 26947.0,
+      "median": 22000.0,
+      "std": 14468.0,
+      "IQR": 16000.0,
+      "skewness": 1.49,
+      "min": 7500.0,
+      "max": 70000.0
+    },
+    "Pedagang Besar": {
+      "mean": 32685.0,
+      "median": 28000.0,
+      "std": 16316.0,
+      "IQR": 17000.0,
+      "skewness": 1.43,
+      "min": 10000.0,
+      "max": 100000.0
+    },
+    "Pasar Tradisional": {
+      "mean": 37853.0,
+      "median": 33700.0,
+      "std": 16527.0,
+      "IQR": 18100.0,
+      "skewness": 1.44,
+      "min": 14900.0,
+      "max": 109500.0
+    },
+    "Pasar Modern": {
+      "mean": 50936.0,
+      "median": 45950.0,
+      "std": 16038.0,
+      "IQR": 18800.0,
+      "skewness": 1.48,
+      "min": 29250.0,
+      "max": 115500.0
+    }
+  },
+  "cuaca_pct": {
+    "Hujan Sedang": 43.1,
+    "Hujan Lebat": 22.5,
+    "Gerimis": 19.6,
+    "Hujan Ringan": 12.3,
+    "Berawan": 2.4
+  },
+  "median_pasar": {
+    "Produsen": 22000.0,
+    "Pedagang Besar": 28000.0,
+    "Pasar Tradisional": 33700.0,
+    "Pasar Modern": 45950.0
+  },
+  "rasio_trad_produsen": 1.53,
+  "anova_pasar_F": 662.2,
+  "bulan_terendah": "Jun",
+  "bulan_tertinggi": "Feb",
+  "median_bulan_terendah": 22900.0,
+  "median_bulan_tertinggi": 39600.0,
+  "kw_bulan_p": 1.8316638812456452e-23,
+  "hujan_best": {
+    "jendela_hari": 60.0,
+    "lag_minggu": 11.0,
+    "spearman": 0.20034270510310048,
+    "p_value": 7.682457756292379e-16,
+    "n": 1588.0
+  },
+  "hujan_same_day_rho": 0.1,
+  "hujan_same_day_p": 0.0,
+  "mahal_musim_hujan": 32.4,
+  "mahal_bulan_lain": 20.8,
+  "chi_musim_p": 6.839576018415766e-24,
+  "rasio_trad_pb_median": 1.21,
+  "rasio_trad_pb_min": 0.99,
+  "rasio_trad_pb_max": 1.55,
+  "puncak_bulanan_trad": {
+    "bulan": "2022-07",
+    "harga": 85267.0
+  },
+  "lebaran_rata_h7": -28.7,
+  "lebaran_per_tahun": {
+    "2020": -24.0,
+    "2021": -34.2,
+    "2022": -52.4,
+    "2023": -28.900000000000006,
+    "2024": -40.6,
+    "2025": 7.599999999999994
+  },
+  "lebaran_tahun_naik": 1,
+  "lebaran_jumlah_tahun": 6,
+  "median_des": 37000.0,
+  "median_non_des": 33600.0,
+  "volatilitas": {
+    "Produsen": {
+      "% hari harga berubah": 4.6,
+      "std perubahan harian (%)": 13.01,
+      "perubahan harian maks (%)": 253.2,
+      "hari berubah > 5%": 66
+    },
+    "Pedagang Besar": {
+      "% hari harga berubah": 17.8,
+      "std perubahan harian (%)": 11.7,
+      "perubahan harian maks (%)": 133.3,
+      "hari berubah > 5%": 244
+    },
+    "Pasar Tradisional": {
+      "% hari harga berubah": 57.3,
+      "std perubahan harian (%)": 11.2,
+      "perubahan harian maks (%)": 92.3,
+      "hari berubah > 5%": 553
+    },
+    "Pasar Modern": {
+      "% hari harga berubah": 13.0,
+      "std perubahan harian (%)": 6.39,
+      "perubahan harian maks (%)": 113.7,
+      "hari berubah > 5%": 146
+    }
+  },
+  "produsen_berubah_tgl_25_27": 70,
+  "produsen_jumlah_berubah": 73,
+  "lead_pb_trad": {
+    "0": 0.003,
+    "1": -0.002,
+    "2": -0.018,
+    "3": -0.014,
+    "4": -0.032,
+    "5": 0.003
+  },
+  "autocorr_trad": {
+    "1": 0.961,
+    "5": 0.861,
+    "20": 0.556,
+    "60": 0.065
+  },
+  "shapiro": {
+    "Harga Pasar Tradisional": {
+      "Shapiro W (n=500)": 0.8641,
+      "p-value": 0.0,
+      "skewness (semua data)": 1.4432
+    },
+    "log(Harga) Pasar Tradisional": {
+      "Shapiro W (n=500)": 0.9784,
+      "p-value": 0.0,
+      "skewness (semua data)": 0.4074
+    },
+    "Curah hujan": {
+      "Shapiro W (n=500)": 0.7837,
+      "p-value": 0.0,
+      "skewness (semua data)": 2.0763
+    },
+    "Suhu": {
+      "Shapiro W (n=500)": 0.9912,
+      "p-value": 0.0046,
+      "skewness (semua data)": 0.2358
+    }
+  }
+}

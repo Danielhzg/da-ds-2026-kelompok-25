@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.env
+
+# Data besar >50 MB jangan dicommit (simpan sampel + tautan sumber)
+# tambahkan pola berikut bila ada file besar:
+# data/raw/full_*.csv
+# *.zip

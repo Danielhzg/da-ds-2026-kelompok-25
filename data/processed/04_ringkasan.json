@@ -1,0 +1,144 @@
+{
+  "fitur_awal": 37,
+  "konstan": [],
+  "quasi_konstan": {
+    "Is_Imputasi": 98.425
+  },
+  "leakage": {
+    "fitur": [
+      "Harga_Cabai_Merah_Agregat"
+    ],
+    "r_agregat": 0.915510938369382,
+    "identik_pct": 95.1,
+    "mae_agregat": 2156,
+    "r2_agregat": 0.6364,
+    "mae_lag1": 1410,
+    "r2_lag1": 0.9484,
+    "r_lag1": 0.9781849197061032,
+    "per_pasar": {
+      "Pasar Modern": {
+        "identik dgn target (%)": 81.2597,
+        "pearson r": 0.7207
+      },
+      "Pasar Tradisional": {
+        "identik dgn target (%)": 99.9222,
+        "pearson r": 0.9998
+      },
+      "Pedagang Besar": {
+        "identik dgn target (%)": 99.2224,
+        "pearson r": 1.0
+      },
+      "Produsen": {
+        "identik dgn target (%)": 100.0,
+        "pearson r": 1.0
+      }
+    }
+  },
+  "kandidat": 35,
+  "dibuang_awal": [
+    "Harga_Cabai_Merah_Agregat",
+    "Is_Imputasi"
+  ],
+  "lasso_alpha": 130.18,
+  "n_lasso": 9,
+  "n_rfecv": 3,
+  "rfecv_mae_min": 1505,
+  "final": [
+    "Harga_Lag1",
+    "Harga_MA7",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_MA20",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "n_final": 12,
+  "suara": {
+    "Harga_Lag1": 4,
+    "Harga_MA7": 4,
+    "Harga_Lag5": 3,
+    "TE_Pasar_Bulan": 3,
+    "Harga_MA20": 3,
+    "Harga_Lag20": 2,
+    "Harga_Produsen_Lag1": 2,
+    "Harga_PB_Lag1": 2,
+    "Interaksi_Lag1_x_MusimHujan": 2,
+    "Level_Rantai_Pasok": 2,
+    "Hari_Menuju_Idul_Fitri": 2,
+    "Akumulasi_Hujan_7H": 2,
+    "Rasio_Thd_Grosir_Lag1": 1,
+    "Momentum_5H": 1,
+    "Bulan": 1,
+    "Bulan_cos": 1,
+    "Akumulasi_Hujan_60H_Lag11Mgg": 1,
+    "Harga_Std7": 1,
+    "Akumulasi_Hujan_30H": 1,
+    "Kategori_Suhu_Lag1": 1,
+    "Suhu_Lag1": 1,
+    "Hujan_Lag1": 1,
+    "Angin_Lag1": 1,
+    "Bulan_sin": 0,
+    "Hari_Hujan_Lebat_30H": 0,
+    "Pasar_Pasar_Modern": 0,
+    "Deviasi_MA20": 0,
+    "Pasar_Pasar_Tradisional": 0,
+    "Pasar_Pedagang_Besar": 0,
+    "Is_Musim_Hujan": 0,
+    "Is_Ramadan": 0,
+    "Is_Menjelang_Hari_Besar": 0,
+    "Kategori_Cuaca_Lag1": 0,
+    "Kategori_Hujan_Lag1": 0,
+    "Hari_dalam_Minggu": 0
+  },
+  "perbandingan": [
+    {
+      "skenario": "Baseline naif (harga kemarin)",
+      "jumlah_fitur": 1,
+      "CV MAE (Rp)": 1244.0,
+      "CV RMSE (Rp)": 3891.0,
+      "CV R2": 0.9479,
+      "CV MAPE (%)": 3.28,
+      "Test MAE (Rp)": 1612.0,
+      "Test R2": 0.9455,
+      "Test MAPE (%)": 3.65
+    },
+    {
+      "skenario": "Semua fitur (termasuk leakage)",
+      "jumlah_fitur": 37,
+      "CV MAE (Rp)": 1314.0,
+      "CV RMSE (Rp)": 3571.0,
+      "CV R2": 0.8662,
+      "CV MAPE (%)": 2.82,
+      "Test MAE (Rp)": 2109.0,
+      "Test R2": 0.9596,
+      "Test MAPE (%)": 5.11
+    },
+    {
+      "skenario": "Semua fitur tanpa leakage & quasi-konstan",
+      "jumlah_fitur": 35,
+      "CV MAE (Rp)": 2041.0,
+      "CV RMSE (Rp)": 4071.0,
+      "CV R2": 0.9444,
+      "CV MAPE (%)": 5.74,
+      "Test MAE (Rp)": 2339.0,
+      "Test R2": 0.9443,
+      "Test MAPE (%)": 5.51
+    },
+    {
+      "skenario": "Fitur terpilih (voting >= 2)",
+      "jumlah_fitur": 12,
+      "CV MAE (Rp)": 1694.0,
+      "CV RMSE (Rp)": 3864.0,
+      "CV R2": 0.949,
+      "CV MAPE (%)": 4.64,
+      "Test MAE (Rp)": 2207.0,
+      "Test R2": 0.9458,
+      "Test MAPE (%)": 5.21
+    }
+  ]
+}

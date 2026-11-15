@@ -1,0 +1,215 @@
+{
+  "baris_setelah_fe": 6272,
+  "baris_dibuang_riwayat": 80,
+  "train_baris": 5144,
+  "test_baris": 1128,
+  "train_periode": [
+    "2020-01-28",
+    "2024-12-31"
+  ],
+  "test_periode": [
+    "2025-01-01",
+    "2026-01-29"
+  ],
+  "jumlah_kolom_csv": 40,
+  "jumlah_kolom_fitur": 37,
+  "jumlah_fitur_hasil_fe": 35,
+  "kolom_asal_bukan_fe": [
+    "Harga_Cabai_Merah_Agregat",
+    "Is_Imputasi"
+  ],
+  "jumlah_kelompok_fitur": 10,
+  "fitur_per_kelompok": {
+    "1. Waktu & siklik": 4,
+    "2. Lag harga per pasar": 3,
+    "3. Agregasi bergulir per pasar": 3,
+    "4. Rasio / selisih": 3,
+    "5. Antar-kelompok (harga pasar hulu)": 2,
+    "6. Domain cuaca (H-1)": 8,
+    "7. Kalender & flag": 4,
+    "8. Interaksi": 1,
+    "9. Diskretisasi": 2,
+    "10. Encoding Kategori_Pasar": 5
+  },
+  "transformasi": {
+    "Harga_Std7": {
+      "skew sebelum": 2.227,
+      "skew sesudah": -0.402,
+      "lambda": 0.199
+    },
+    "Momentum_5H": {
+      "skew sebelum": 2.011,
+      "skew sesudah": -0.18,
+      "lambda": -0.362
+    },
+    "Deviasi_MA20": {
+      "skew sebelum": 1.141,
+      "skew sesudah": -0.047,
+      "lambda": -0.293
+    },
+    "Rasio_Thd_Grosir_Lag1": {
+      "skew sebelum": 1.366,
+      "skew sesudah": -0.035,
+      "lambda": -0.92
+    },
+    "Hujan_Lag1": {
+      "skew sebelum": 1.397,
+      "skew sesudah": -0.064,
+      "lambda": 0.29
+    }
+  },
+  "batas_suhu": [
+    25.3,
+    26.1
+  ],
+  "bukti_korelasi": [
+    {
+      "fitur baru": "Harga_Lag1",
+      "kolom asal pembanding": "Bulan",
+      "|rho| fitur baru": 0.98,
+      "|rho| kolom asal": 0.017,
+      "peningkatan": 0.963
+    },
+    {
+      "fitur baru": "Harga_MA7",
+      "kolom asal pembanding": "Bulan",
+      "|rho| fitur baru": 0.944,
+      "|rho| kolom asal": 0.017,
+      "peningkatan": 0.927
+    },
+    {
+      "fitur baru": "TE_Pasar_Bulan",
+      "kolom asal pembanding": "Bulan",
+      "|rho| fitur baru": 0.602,
+      "|rho| kolom asal": 0.017,
+      "peningkatan": 0.585
+    },
+    {
+      "fitur baru": "Harga_PB_Lag1",
+      "kolom asal pembanding": "Level_Rantai_Pasok",
+      "|rho| fitur baru": 0.657,
+      "|rho| kolom asal": 0.58,
+      "peningkatan": 0.077
+    },
+    {
+      "fitur baru": "Akumulasi_Hujan_60H_Lag11Mgg",
+      "kolom asal pembanding": "Curah hujan hari-H (kolom asal)",
+      "|rho| fitur baru": 0.22,
+      "|rho| kolom asal": 0.049,
+      "peningkatan": 0.171
+    },
+    {
+      "fitur baru": "Akumulasi_Hujan_30H",
+      "kolom asal pembanding": "Curah hujan hari-H (kolom asal)",
+      "|rho| fitur baru": 0.135,
+      "|rho| kolom asal": 0.049,
+      "peningkatan": 0.086
+    },
+    {
+      "fitur baru": "Hari_Hujan_Lebat_30H",
+      "kolom asal pembanding": "Curah hujan hari-H (kolom asal)",
+      "|rho| fitur baru": 0.177,
+      "|rho| kolom asal": 0.049,
+      "peningkatan": 0.128
+    }
+  ],
+  "bukti_flag": [
+    {
+      "flag": "Is_Musim_Hujan",
+      "rata2 harga saat 1 (Rp)": 35510,
+      "rata2 harga saat 0 (Rp)": 36875,
+      "selisih (%)": -3.7,
+      "n (flag=1)": 436
+    },
+    {
+      "flag": "Is_Ramadan",
+      "rata2 harga saat 1 (Rp)": 31176,
+      "rata2 harga saat 0 (Rp)": 36887,
+      "selisih (%)": -15.5,
+      "n (flag=1)": 107
+    },
+    {
+      "flag": "Is_Menjelang_Hari_Besar",
+      "rata2 harga saat 1 (Rp)": 37690,
+      "rata2 harga saat 0 (Rp)": 36267,
+      "selisih (%)": 3.9,
+      "n (flag=1)": 131
+    }
+  ],
+  "fitur_hasil_fe": [
+    "Bulan",
+    "Hari_dalam_Minggu",
+    "Bulan_sin",
+    "Bulan_cos",
+    "Harga_Lag1",
+    "Harga_Lag5",
+    "Harga_Lag20",
+    "Harga_MA7",
+    "Harga_MA20",
+    "Harga_Std7",
+    "Momentum_5H",
+    "Deviasi_MA20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Rasio_Thd_Grosir_Lag1",
+    "Hujan_Lag1",
+    "Akumulasi_Hujan_7H",
+    "Akumulasi_Hujan_30H",
+    "Akumulasi_Hujan_60H_Lag11Mgg",
+    "Hari_Hujan_Lebat_30H",
+    "Suhu_Lag1",
+    "Angin_Lag1",
+    "Kategori_Cuaca_Lag1",
+    "Hari_Menuju_Idul_Fitri",
+    "Is_Ramadan",
+    "Is_Menjelang_Hari_Besar",
+    "Is_Musim_Hujan",
+    "Level_Rantai_Pasok",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Pasar_Pedagang_Besar",
+    "Pasar_Pasar_Tradisional",
+    "Pasar_Pasar_Modern",
+    "TE_Pasar_Bulan",
+    "Kategori_Hujan_Lag1",
+    "Kategori_Suhu_Lag1"
+  ],
+  "fitur_model": [
+    "Harga_Cabai_Merah_Agregat",
+    "Is_Imputasi",
+    "Bulan",
+    "Hari_dalam_Minggu",
+    "Bulan_sin",
+    "Bulan_cos",
+    "Harga_Lag1",
+    "Harga_Lag5",
+    "Harga_Lag20",
+    "Harga_MA7",
+    "Harga_MA20",
+    "Harga_Std7",
+    "Momentum_5H",
+    "Deviasi_MA20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Rasio_Thd_Grosir_Lag1",
+    "Hujan_Lag1",
+    "Akumulasi_Hujan_7H",
+    "Akumulasi_Hujan_30H",
+    "Akumulasi_Hujan_60H_Lag11Mgg",
+    "Hari_Hujan_Lebat_30H",
+    "Suhu_Lag1",
+    "Angin_Lag1",
+    "Kategori_Cuaca_Lag1",
+    "Hari_Menuju_Idul_Fitri",
+    "Is_Ramadan",
+    "Is_Menjelang_Hari_Besar",
+    "Is_Musim_Hujan",
+    "Level_Rantai_Pasok",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Pasar_Pedagang_Besar",
+    "Pasar_Pasar_Tradisional",
+    "Pasar_Pasar_Modern",
+    "TE_Pasar_Bulan",
+    "Kategori_Hujan_Lag1",
+    "Kategori_Suhu_Lag1"
+  ]
+}

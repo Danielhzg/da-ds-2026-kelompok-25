@@ -1,0 +1,17 @@
+﻿langkah,kolom,jumlah_baris_terdampak,tindakan,alasan
+2a. Missing struktural (periode),Semua kolom,4085,Hapus baris di luar 31-12-2019 s.d. 29-01-2026,Pasar belum disurvei / berhenti disurvei; mengisi = mengarang data
+2b. Missing hari libur,Harga_Cabai_Merah_Keriting,91,Forward-fill per Kategori_Pasar + kolom penanda Is_Imputasi,17-98% kosong terjadi di sekitar libur nasional; ffill tidak memakai data masa depan
+2b. Missing hari libur,Harga_Cabai_Merah_Agregat,115,"Forward-fill per Kategori_Pasar (kolom kandidat leakage, diuji di Tahap 4)",Sama dengan harga keriting + 24 sel yang kosong hanya di agregat Pasar Modern
+3. Kolom duplikat,rain_sum (mm),3667,Kolom dihapus,100% identik dengan precipitation_sum (mm); informasi ganda
+3. Duplikat baris/kunci,"Tanggal, Kategori_Pasar",0,"Diperiksa, tidak ada yang dihapus",0 duplikat persis maupun kunci (juga setelah teks tanggal dirapikan)
+3. Kolom hampir duplikat,Harga_Cabai_Merah_Agregat,6352,Dipertahankan sebagai kandidat; diuji leakage di Tahap 4,Baris induk 'Cabai Merah' identik dgn target di sebagian besar hari (agregat hari yang sama)
+4. Tipe & format,Tanggal,10437,"Hapus spasi, parse dd/mm/yyyy -> datetime",Header tanggal berupa teks '20/ 10/ 2016'
+4. Tipe & format,"Harga_Cabai_Merah_Keriting, Harga_Cabai_Merah_Agregat",16909,"Hapus koma ribuan, '-' -> NaN, ubah ke int64",Angka tersimpan sebagai teks sehingga tidak bisa dihitung
+4. Tipe & format,Komoditas,10437,strip() spasi di akhir,'Cabai Merah Keriting ' vs 'Cabai Merah Keriting' dianggap berbeda
+4. Tipe & format,Kolom cuaca,5,"Ganti nama kolom (tanpa satuan/simbol), time -> datetime","Nama asli berisi '(°C)', '(mm)' menyulitkan pemanggilan kolom"
+4. Tipe & format,Kategori_Pasar,4,Label seragam dari nama file + tipe category berurutan,"Nama file tidak konsisten ('pedagang tradisional', '10n tahun')"
+5. Aturan domain,"Harga, Suhu, Curah_Hujan, Angin, Kode_Cuaca, Tanggal",0,Diperiksa 9 aturan; tidak ada nilai yang diubah,Semua nilai berada dalam rentang fisik/ekonomi yang wajar
+5. Tanggal di luar rentang,Tanggal (file Produsen),1,Ikut terbuang bersama langkah 2a,Kolom 21/10/2026 hanya ada di file Produsen dan isinya '-'
+6. Outlier - kesalahan input,Harga_Cabai_Merah_Keriting,1,Diganti harga hari sebelumnya (forward-fill) + Is_Imputasi=1,Lonjakan 1 hari >40% lalu kembali ke level semula = pola salah ketik
+6. Outlier - ekstrem sah,Harga_Cabai_Merah_Keriting,372,Dipertahankan (tidak di-capping),Bertahan berminggu-minggu & serentak di beberapa pasar (gejolak harga nyata); ini justru pola yang harus diprediksi
+6. Outlier - ekstrem sah,"Curah_Hujan_mm, Kecepatan_Angin_Maks_kmh",86,Dipertahankan; kemiringan ditangani transformasi di Tahap 3,Hujan lebat/angin kencang adalah kejadian cuaca nyata di Medan

@@ -1,0 +1,244 @@
+{
+  "top_target": [
+    {
+      "fitur": "Harga_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.9796,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_MA7",
+      "metode": "Spearman",
+      "korelasi": 0.9437,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_Lag5",
+      "metode": "Spearman",
+      "korelasi": 0.9028,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_MA20",
+      "metode": "Spearman",
+      "korelasi": 0.8775,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_Lag20",
+      "metode": "Spearman",
+      "korelasi": 0.6896,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_PB_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.6571,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "TE_Pasar_Bulan",
+      "metode": "Spearman",
+      "korelasi": 0.6023,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Level_Rantai_Pasok",
+      "metode": "Spearman",
+      "korelasi": 0.5798,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Harga_Produsen_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.5747,
+      "p_value": 0.0
+    },
+    {
+      "fitur": "Rasio_Thd_Grosir_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.4905,
+      "p_value": 1.019e-309
+    }
+  ],
+  "eta2": {
+    "Kategori_Pasar": 0.2679,
+    "Bulan": 0.044,
+    "Kategori_Cuaca_Lag1": 0.0058,
+    "Kategori_Suhu_Lag1": 0.0046,
+    "Kategori_Hujan_Lag1": 0.0018,
+    "Hari_dalam_Minggu": 0.0
+  },
+  "cramers_v": {
+    "Bulan ~ Kategori_Pasar": 0.0,
+    "Kategori_Hujan_Lag1 ~ Kategori_Pasar": 0.0,
+    "Kategori_Hujan_Lag1 ~ Bulan": 0.178,
+    "Kategori_Cuaca_Lag1 ~ Kategori_Pasar": 0.0,
+    "Kategori_Cuaca_Lag1 ~ Bulan": 0.17,
+    "Kategori_Cuaca_Lag1 ~ Kategori_Hujan_Lag1": 0.535,
+    "Kategori_Suhu_Lag1 ~ Kategori_Pasar": 0.0,
+    "Kategori_Suhu_Lag1 ~ Bulan": 0.435,
+    "Kategori_Suhu_Lag1 ~ Kategori_Hujan_Lag1": 0.248,
+    "Kategori_Suhu_Lag1 ~ Kategori_Cuaca_Lag1": 0.237,
+    "Is_Musim_Hujan ~ Kategori_Pasar": 0.0,
+    "Is_Musim_Hujan ~ Bulan": 1.0,
+    "Is_Musim_Hujan ~ Kategori_Hujan_Lag1": 0.188,
+    "Is_Musim_Hujan ~ Kategori_Cuaca_Lag1": 0.166,
+    "Is_Musim_Hujan ~ Kategori_Suhu_Lag1": 0.293,
+    "Is_Ramadan ~ Kategori_Pasar": 0.0,
+    "Is_Ramadan ~ Bulan": 0.601,
+    "Is_Ramadan ~ Kategori_Hujan_Lag1": 0.02,
+    "Is_Ramadan ~ Kategori_Cuaca_Lag1": 0.032,
+    "Is_Ramadan ~ Kategori_Suhu_Lag1": 0.117,
+    "Is_Ramadan ~ Is_Musim_Hujan": 0.215
+  },
+  "pasangan_tinggi": 8,
+  "vif_awal": {
+    "Harga_MA7": 147.7,
+    "Harga_Lag5": 52.0,
+    "Harga_MA20": 44.6,
+    "Harga_Lag1": 24.2,
+    "Harga_Lag20": 8.9,
+    "Level_Rantai_Pasok": 6.1,
+    "TE_Pasar_Bulan": 5.3,
+    "Harga_Produsen_Lag1": 5.2,
+    "Harga_PB_Lag1": 5.0,
+    "Interaksi_Lag1_x_MusimHujan": 1.2,
+    "Akumulasi_Hujan_7H": 1.2,
+    "Hari_Menuju_Idul_Fitri": 1.0
+  },
+  "vif_akhir": {
+    "Harga_Lag1": 9.61,
+    "Harga_Lag5": 8.89,
+    "Level_Rantai_Pasok": 6.01,
+    "TE_Pasar_Bulan": 5.25,
+    "Harga_PB_Lag1": 4.87,
+    "Harga_Produsen_Lag1": 4.64,
+    "Harga_Lag20": 3.34,
+    "Interaksi_Lag1_x_MusimHujan": 1.24,
+    "Akumulasi_Hujan_7H": 1.22,
+    "Hari_Menuju_Idul_Fitri": 1.02
+  },
+  "log_vif": [
+    {
+      "dibuang": "Harga_MA7",
+      "VIF saat dibuang": 147.7,
+      "|rho| target": 0.944
+    },
+    {
+      "dibuang": "Harga_MA20",
+      "VIF saat dibuang": 35.6,
+      "|rho| target": 0.877
+    }
+  ],
+  "fitur_uas_linear": [
+    "Harga_Lag1",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "dampak": [
+    {
+      "set fitur": "Fitur terpilih Tahap 4",
+      "jumlah": 12,
+      "CV MAE (Rp)": 1694,
+      "CV R2": 0.949,
+      "VIF maks": 147.7
+    },
+    {
+      "set fitur": "Setelah buang multikolinear",
+      "jumlah": 10,
+      "CV MAE (Rp)": 1666,
+      "CV R2": 0.9484,
+      "VIF maks": 9.6
+    }
+  ],
+  "coef_lag1": [
+    15397,
+    16411
+  ],
+  "pvalue": [
+    {
+      "fitur": "Harga_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.9796,
+      "IK 95%": "[0.978; 0.981]",
+      "p_value": "0.00e+00",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Harga_PB_Lag1",
+      "metode": "Spearman",
+      "korelasi": 0.6571,
+      "IK 95%": "[0.641; 0.672]",
+      "p_value": "0.00e+00",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Akumulasi_Hujan_60H_Lag11Mgg",
+      "metode": "Spearman",
+      "korelasi": 0.2198,
+      "IK 95%": "[0.194; 0.246]",
+      "p_value": "2.68e-57",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Hari_Hujan_Lebat_30H",
+      "metode": "Spearman",
+      "korelasi": 0.1769,
+      "IK 95%": "[0.150; 0.203]",
+      "p_value": "1.89e-37",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Is_Ramadan",
+      "metode": "point-biserial",
+      "korelasi": -0.0513,
+      "IK 95%": "[-0.079; -0.024]",
+      "p_value": "2.30e-04",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Is_Musim_Hujan",
+      "metode": "point-biserial",
+      "korelasi": -0.0168,
+      "IK 95%": "[-0.044; 0.010]",
+      "p_value": "2.27e-01",
+      "H0 (tidak berkorelasi)": "gagal ditolak"
+    },
+    {
+      "fitur": "Suhu_Lag1",
+      "metode": "Spearman",
+      "korelasi": -0.0893,
+      "IK 95%": "[-0.116; -0.062]",
+      "p_value": "1.43e-10",
+      "H0 (tidak berkorelasi)": "ditolak"
+    },
+    {
+      "fitur": "Hari_dalam_Minggu",
+      "metode": "Spearman",
+      "korelasi": -0.0066,
+      "IK 95%": "[-0.034; 0.021]",
+      "p_value": "6.34e-01",
+      "H0 (tidak berkorelasi)": "gagal ditolak"
+    }
+  ],
+  "confounder": {
+    "rho_hujan_raw": 0.302,
+    "rho_hujan_partial_bulan": 0.253,
+    "eta2_bulan_hujan": 0.501,
+    "rho_pb_gabungan": 0.657,
+    "rho_pb_per_pasar": {
+      "Pasar Modern": 0.825,
+      "Pasar Tradisional": 0.84,
+      "Pedagang Besar": 0.966,
+      "Produsen": 0.725
+    }
+  }
+}

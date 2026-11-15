@@ -1,0 +1,29 @@
+{
+  "fitur_terpilih_tahap4": [
+    "Harga_Lag1",
+    "Harga_MA7",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_MA20",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "fitur_untuk_model_linear": [
+    "Harga_Lag1",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "catatan": "Model berbasis pohon (RF/XGBoost) memakai fitur_terpilih_tahap4; model linear memakai fitur_untuk_model_linear."
+}

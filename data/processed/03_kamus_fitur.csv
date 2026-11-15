@@ -1,0 +1,36 @@
+no,fitur,kelompok,jenis,rumus,makna
+1,Bulan,1. Waktu & siklik,Waktu,Tanggal.month (1-12),Menangkap musim panen (Jun termurah) dan paceklik (Feb termahal) hasil EDA
+2,Hari_dalam_Minggu,1. Waktu & siklik,Waktu,Tanggal.dayofweek (0=Senin..4=Jumat),Pola harian pasokan/belanja dalam seminggu
+3,Bulan_sin,1. Waktu & siklik,Waktu (siklik),sin(2*pi*Bulan/12),Desember dan Januari berdekatan secara musim; angka 12 dan 1 tidak
+4,Bulan_cos,1. Waktu & siklik,Waktu (siklik),cos(2*pi*Bulan/12),Pasangan Bulan_sin agar setiap bulan punya koordinat unik di lingkaran
+5,Harga_Lag1,2. Lag harga per pasar,Lag per kelompok,harga pasar yg sama pada hari kerja t-1,Harga kemarin = acuan utama pedagang (price rigidity)
+6,Harga_Lag5,2. Lag harga per pasar,Lag per kelompok,harga t-5 (seminggu lalu),Posisi harga seminggu sebelumnya
+7,Harga_Lag20,2. Lag harga per pasar,Lag per kelompok,harga t-20 (sebulan lalu),"Posisi harga sebulan sebelumnya (autokorelasi 0,56 di EDA)"
+8,Harga_MA7,3. Agregasi bergulir per pasar,Agregasi per kelompok,mean(harga t-7..t-1) per pasar,Tren mingguan yang meredam fluktuasi harian
+9,Harga_MA20,3. Agregasi bergulir per pasar,Agregasi per kelompok,mean(harga t-20..t-1) per pasar,Tren bulanan
+10,Harga_Std7,3. Agregasi bergulir per pasar,Agregasi per kelompok,std(harga t-7..t-1) per pasar,Volatilitas jangka pendek: pasar sedang bergejolak atau tenang
+11,Momentum_5H,4. Rasio / selisih,Rasio,harga t-1 / harga t-6 - 1,Arah & kecepatan perubahan 5 hari terakhir (sedang naik/turun)
+12,Deviasi_MA20,4. Rasio / selisih,Rasio,harga t-1 / MA20 - 1,Seberapa jauh harga kemarin di atas/bawah tren bulanan (potensi koreksi)
+13,Harga_Produsen_Lag1,5. Antar-kelompok (harga pasar hulu),Antar-kelompok,harga Produsen t-1,Harga di tingkat petani sebagai sinyal hulu
+14,Harga_PB_Lag1,5. Antar-kelompok (harga pasar hulu),Antar-kelompok,harga Pedagang Besar t-1,"Harga grosir = modal pedagang eceran (Spearman 0,89 dgn Pasar Tradisional di EDA)"
+15,Rasio_Thd_Grosir_Lag1,4. Rasio / selisih,Rasio,harga pasar t-1 / harga Pedagang Besar t-1,"Markup terhadap grosir; EDA: rasio Trad/Grosir bergerak 0,99-1,55"
+16,Hujan_Lag1,6. Domain cuaca (H-1),Domain cuaca,curah hujan H-1 (mm),Hujan kemarin mengganggu panen & pengiriman
+17,Akumulasi_Hujan_7H,6. Domain cuaca (H-1),Domain cuaca,sum(hujan kalender t-7..t-1),Efek hujan mingguan pada distribusi
+18,Akumulasi_Hujan_30H,6. Domain cuaca (H-1),Domain cuaca,sum(hujan kalender t-30..t-1),Kondisi lahan sebulan terakhir (risiko penyakit antraknosa/patek)
+19,Akumulasi_Hujan_60H_Lag11Mgg,6. Domain cuaca (H-1),Domain cuaca,sum(hujan 60 hari) yang berakhir 77 hari sebelum t,"EDA: korelasi hujan-harga terkuat (rho 0,20) pada jeda ±11 minggu = siklus tanam-panen cabai"
+20,Hari_Hujan_Lebat_30H,6. Domain cuaca (H-1),Domain cuaca,jumlah hari hujan >= 20 mm dlm 30 hari terakhir,Frekuensi hujan sedang-lebat (BMKG) yang merusak bunga/buah
+21,Suhu_Lag1,6. Domain cuaca (H-1),Domain cuaca,suhu rata-rata H-1,Suhu memengaruhi pematangan & pembusukan cabai
+22,Angin_Lag1,6. Domain cuaca (H-1),Domain cuaca,angin maks H-1,Angin kencang merontokkan bunga cabai
+23,Kategori_Cuaca_Lag1,6. Domain cuaca (H-1),Domain cuaca (ordinal),"kode WMO H-1 -> 0 Berawan,1 Gerimis,2 Ringan,3 Sedang,4 Lebat",Intensitas cuaca kemarin dalam skala berurutan
+24,Hari_Menuju_Idul_Fitri,7. Kalender & flag,Domain kalender,selisih hari ke Idul Fitri berikutnya,Jarak ke puncak permintaan tahunan
+25,Is_Ramadan,7. Kalender & flag,Flag,1 jika 1-30 hari sebelum Idul Fitri,Periode Ramadan (permintaan rumah tangga naik)
+26,Is_Menjelang_Hari_Besar,7. Kalender & flag,Flag,1 jika <=7 hari sebelum Idul Fitri/Idul Adha/Natal/Tahun Baru/Imlek,Lonjakan belanja menjelang hari raya
+27,Is_Musim_Hujan,7. Kalender & flag,Flag,1 jika bulan Sep-Des,"EDA: hari 'mahal' 32,4% di Sep-Des vs 20,8% bulan lain (chi-square p<0,001)"
+28,Level_Rantai_Pasok,10. Encoding Kategori_Pasar,Encoding ordinal,"Produsen=1, Pedagang Besar=2, Pasar Tradisional=3, Pasar Modern=4","Posisi di rantai distribusi (hulu->hilir), harga median naik tiap level"
+29,Interaksi_Lag1_x_MusimHujan,8. Interaksi,Interaksi,Harga_Lag1 x Is_Musim_Hujan,Membolehkan kekuatan 'harga kemarin' berbeda saat musim hujan
+30,Pasar_Pedagang_Besar,10. Encoding Kategori_Pasar,Encoding nominal (one-hot),"1 jika Kategori_Pasar = Pedagang Besar, selain itu 0 (baseline Produsen)",Perbedaan level harga antarpasar
+31,Pasar_Pasar_Tradisional,10. Encoding Kategori_Pasar,Encoding nominal (one-hot),"1 jika Kategori_Pasar = Pasar Tradisional, selain itu 0 (baseline Produsen)",Perbedaan level harga antarpasar
+32,Pasar_Pasar_Modern,10. Encoding Kategori_Pasar,Encoding nominal (one-hot),"1 jika Kategori_Pasar = Pasar Modern, selain itu 0 (baseline Produsen)",Perbedaan level harga antarpasar
+33,TE_Pasar_Bulan,10. Encoding Kategori_Pasar,Agregasi per kelompok (target encoding),"rata-rata harga train per (pasar, bulan), smoothing m=20, out-of-fold",Harga 'normal' sebuah pasar pada bulan tersebut
+34,Kategori_Hujan_Lag1,9. Diskretisasi,Diskretisasi (aturan domain BMKG),"cut(Hujan_Lag1, [0,5 | 20 | 50 | 100] mm)",Intensitas hujan kemarin sesuai klasifikasi resmi BMKG
+35,Kategori_Suhu_Lag1,9. Diskretisasi,Diskretisasi (equal-frequency),"qcut(Suhu_Lag1, 3) dari train",Hari sejuk / sedang / panas
