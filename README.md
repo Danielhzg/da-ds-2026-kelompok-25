@@ -1,12 +1,11 @@
 # Prediksi Harga Cabai Merah Keriting di Pasar Tradisional Kota Medan
 
 Proyek Terintegrasi Data Analitik & Data Science — **Kelompok 25** — IT Del
-Dosen Pengampu: Oppir Hutapea
 
 | NIM | Nama | Peran |
 |---|---|---|
-| 41426085 | **Dame Sisri Rumapea** | Ketua kelompok — lead sisi Data Analitik (ETL, warehouse, dashboard). Pengampu DASI + DALI |
-| 41426090 | **Daniel Haganta Ginting** | Project Manager (laporan mingguan) — lead sisi Data Science (model, evaluasi). Pengampu DASI |
+| 41426085 | **Dame Sisri Rumapea** | Ketua kelompok — lead sisi Data Analitik (ETL, warehouse, dashboard). DASI + DALIS |
+| 41426090 | **Daniel Haganta Ginting** | Project Manager (laporan mingguan) — lead sisi Data Science (model, evaluasi). DASI |
 
 ## Tujuan proyek
 
