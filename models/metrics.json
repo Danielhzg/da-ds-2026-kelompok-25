@@ -1,0 +1,317 @@
+{
+  "best_model": "Random Forest",
+  "baseline_model": "Ridge Regression (Baseline)",
+  "naive_model": "Naive (Persistence)",
+  "pasar_fokus": "Pasar Tradisional",
+  "strategi": "Target perubahan harga harian (dy_t = y_t - Harga_Lag1), dikonversi ke Rupiah (Harga_Lag1 + dy_hat)",
+  "sumber_data": "Fallback CSV (data/processed/01_clean.csv)",
+  "split": {
+    "train": "2020-01-28 s.d. 2024-12-31",
+    "test": "2025-01-01 s.d. 2026-01-29",
+    "n_train": 1286,
+    "n_test": 282
+  },
+  "cv": "TimeSeriesSplit(n_splits=5) dengan target encoding di-fit ulang per fold",
+  "fitur_pohon": [
+    "Harga_Lag1",
+    "Harga_MA7",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_MA20",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "fitur_linear": [
+    "Harga_Lag1",
+    "Harga_Lag5",
+    "TE_Pasar_Bulan",
+    "Harga_Lag20",
+    "Harga_Produsen_Lag1",
+    "Harga_PB_Lag1",
+    "Interaksi_Lag1_x_MusimHujan",
+    "Level_Rantai_Pasok",
+    "Hari_Menuju_Idul_Fitri",
+    "Akumulasi_Hujan_7H"
+  ],
+  "results": [
+    {
+      "model": "Naive (Persistence)",
+      "n_fitur": 10,
+      "best_params": {},
+      "cv": {
+        "MAE": 2297.01,
+        "RMSE": 4680.3,
+        "MAPE": 5.6225,
+        "R2": 0.91809
+      },
+      "test": {
+        "MAE": 3340.43,
+        "RMSE": 5561.93,
+        "MAPE": 6.8655,
+        "R2": 0.90911
+      },
+      "waktu_latih_detik": 0.01
+    },
+    {
+      "model": "Ridge Regression (Baseline)",
+      "n_fitur": 10,
+      "best_params": {
+        "ridge__alpha": 5000.0
+      },
+      "cv": {
+        "MAE": 2329.81,
+        "RMSE": 4662.23,
+        "MAPE": 5.7485,
+        "R2": 0.91872
+      },
+      "test": {
+        "MAE": 3353.21,
+        "RMSE": 5532.61,
+        "MAPE": 6.9491,
+        "R2": 0.91006
+      },
+      "waktu_latih_detik": 0.22
+    },
+    {
+      "model": "Random Forest",
+      "n_fitur": 12,
+      "best_params": {
+        "n_estimators": 300,
+        "min_samples_leaf": 50,
+        "max_features": 0.5,
+        "max_depth": 8,
+        "criterion": "absolute_error"
+      },
+      "cv": {
+        "MAE": 2298.16,
+        "RMSE": 4679.74,
+        "MAPE": 5.6259,
+        "R2": 0.91811
+      },
+      "test": {
+        "MAE": 3335.39,
+        "RMSE": 5558.99,
+        "MAPE": 6.8519,
+        "R2": 0.9092
+      },
+      "waktu_latih_detik": 33.29
+    },
+    {
+      "model": "XGBoost",
+      "n_fitur": 12,
+      "best_params": {
+        "subsample": 0.75,
+        "objective": "reg:pseudohubererror",
+        "n_estimators": 200,
+        "min_child_weight": 25,
+        "max_depth": 2,
+        "learning_rate": 0.015,
+        "huber_slope": 300.0,
+        "colsample_bytree": 1.0
+      },
+      "cv": {
+        "MAE": 2322.79,
+        "RMSE": 4667.59,
+        "MAPE": 5.7007,
+        "R2": 0.91854
+      },
+      "test": {
+        "MAE": 3325.29,
+        "RMSE": 5541.36,
+        "MAPE": 6.8157,
+        "R2": 0.90978
+      },
+      "waktu_latih_detik": 14.69
+    },
+    {
+      "model": "LightGBM",
+      "n_fitur": 12,
+      "best_params": {
+        "subsample_freq": 1,
+        "subsample": 1.0,
+        "objective": "mae",
+        "num_leaves": 7,
+        "n_estimators": 200,
+        "min_child_samples": 30,
+        "max_depth": 4,
+        "learning_rate": 0.025,
+        "colsample_bytree": 0.75,
+        "alpha": 600.0
+      },
+      "cv": {
+        "MAE": 2304.08,
+        "RMSE": 4669.43,
+        "MAPE": 5.6415,
+        "R2": 0.91847
+      },
+      "test": {
+        "MAE": 3322.42,
+        "RMSE": 5535.51,
+        "MAPE": 6.7802,
+        "R2": 0.90997
+      },
+      "waktu_latih_detik": 9.75
+    }
+  ],
+  "feature_importance": {
+    "Interaksi_Lag1_x_MusimHujan": 0.557025,
+    "Akumulasi_Hujan_7H": 0.076934,
+    "Harga_Lag1": 0.069758,
+    "Hari_Menuju_Idul_Fitri": 0.064329,
+    "Harga_MA7": 0.061031,
+    "Harga_Lag20": 0.046336,
+    "Harga_Lag5": 0.043127,
+    "Harga_MA20": 0.03131,
+    "Harga_PB_Lag1": 0.027873,
+    "Harga_Produsen_Lag1": 0.013078,
+    "TE_Pasar_Bulan": 0.009199,
+    "Level_Rantai_Pasok": 0.0
+  },
+  "residual_terbesar": [
+    {
+      "tanggal": "2025-10-20",
+      "harga_lag1": 69600.0,
+      "aktual": 93300.0,
+      "prediksi": 69436.7,
+      "residual": 23863.3,
+      "abs_residual": 23863.3,
+      "ape_persen": 25.577,
+      "akumulasi_hujan_7h": 131.2,
+      "harga_produsen_lag1": 69750.0,
+      "harga_pb_lag1": 67500.0,
+      "hari_menuju_idul_fitri": 152,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-09-01",
+      "harga_lag1": 40300.0,
+      "aktual": 62100.0,
+      "prediksi": 40293.3,
+      "residual": 21806.7,
+      "abs_residual": 21806.7,
+      "ape_persen": 35.115,
+      "akumulasi_hujan_7h": 67.6,
+      "harga_produsen_lag1": 19750.0,
+      "harga_pb_lag1": 33000.0,
+      "hari_menuju_idul_fitri": 201,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-11-26",
+      "harga_lag1": 51100.0,
+      "aktual": 72700.0,
+      "prediksi": 50933.7,
+      "residual": 21766.3,
+      "abs_residual": 21766.3,
+      "ape_persen": 29.94,
+      "akumulasi_hujan_7h": 189.9,
+      "harga_produsen_lag1": 41750.0,
+      "harga_pb_lag1": 46500.0,
+      "hari_menuju_idul_fitri": 115,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-09-08",
+      "harga_lag1": 61800.0,
+      "aktual": 81300.0,
+      "prediksi": 61627.3,
+      "residual": 19672.7,
+      "abs_residual": 19672.7,
+      "ape_persen": 24.198,
+      "akumulasi_hujan_7h": 65.1,
+      "harga_produsen_lag1": 19750.0,
+      "harga_pb_lag1": 55000.0,
+      "hari_menuju_idul_fitri": 194,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-12-03",
+      "harga_lag1": 81200.0,
+      "aktual": 62200.0,
+      "prediksi": 81033.7,
+      "residual": -18833.7,
+      "abs_residual": 18833.7,
+      "ape_persen": 30.279,
+      "akumulasi_hujan_7h": 267.1,
+      "harga_produsen_lag1": 41750.0,
+      "harga_pb_lag1": 67500.0,
+      "hari_menuju_idul_fitri": 108,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-12-08",
+      "harga_lag1": 71500.0,
+      "aktual": 52600.0,
+      "prediksi": 71333.7,
+      "residual": -18733.7,
+      "abs_residual": 18733.7,
+      "ape_persen": 35.615,
+      "akumulasi_hujan_7h": 120.5,
+      "harga_produsen_lag1": 41750.0,
+      "harga_pb_lag1": 55000.0,
+      "hari_menuju_idul_fitri": 103,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-03-26",
+      "harga_lag1": 39800.0,
+      "aktual": 58300.0,
+      "prediksi": 39798.2,
+      "residual": 18501.8,
+      "abs_residual": 18501.8,
+      "ape_persen": 31.736,
+      "akumulasi_hujan_7h": 60.8,
+      "harga_produsen_lag1": 21500.0,
+      "harga_pb_lag1": 30000.0,
+      "hari_menuju_idul_fitri": 5,
+      "is_musim_hujan": 0
+    },
+    {
+      "tanggal": "2025-12-01",
+      "harga_lag1": 72600.0,
+      "aktual": 90000.0,
+      "prediksi": 72433.7,
+      "residual": 17566.3,
+      "abs_residual": 17566.3,
+      "ape_persen": 19.518,
+      "akumulasi_hujan_7h": 368.5,
+      "harga_produsen_lag1": 41750.0,
+      "harga_pb_lag1": 67500.0,
+      "hari_menuju_idul_fitri": 110,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-09-09",
+      "harga_lag1": 81300.0,
+      "aktual": 64500.0,
+      "prediksi": 81119.0,
+      "residual": -16619.0,
+      "abs_residual": 16619.0,
+      "ape_persen": 25.766,
+      "akumulasi_hujan_7h": 56.1,
+      "harga_produsen_lag1": 19750.0,
+      "harga_pb_lag1": 55000.0,
+      "hari_menuju_idul_fitri": 193,
+      "is_musim_hujan": 1
+    },
+    {
+      "tanggal": "2025-09-17",
+      "harga_lag1": 71500.0,
+      "aktual": 86400.0,
+      "prediksi": 71338.3,
+      "residual": 15061.7,
+      "abs_residual": 15061.7,
+      "ape_persen": 17.433,
+      "akumulasi_hujan_7h": 111.6,
+      "harga_produsen_lag1": 19750.0,
+      "harga_pb_lag1": 59500.0,
+      "hari_menuju_idul_fitri": 185,
+      "is_musim_hujan": 1
+    }
+  ]
+}
