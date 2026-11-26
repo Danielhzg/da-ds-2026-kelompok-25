@@ -26,34 +26,37 @@ harga/perubahan harga agar lonjakan (mis. Jul 2022, rata-rata Rp85.267/kg) dapat
 
 ```
 da-ds-2026-kelompok-25/
-├── README.md             # file ini
-├── RENCANA_PROYEK.md     # rencana kerja M1–M15 + aturan kontribusi
+├── README.md             # dokumentasi utama proyek & cara menjalankan
 ├── CONTRIBUTING.md       # tata cara branch, commit, PR, review
-├── requirements.txt
-├── data/                 # data mentah (sampel) + hasil olahan (<50 MB per file)
-├── etl/                  # skrip extract-transform-load ke warehouse
-├── warehouse/            # DDL skema bintang + ERD
-├── notebooks/            # EDA, baseline, eksperimen model
-├── models/               # model terbaik (.pkl/.joblib) + model card
-├── app/                  # dashboard (Streamlit) + modul prediksi
-├── paper/                # naskah jurnal + jurnal-target.md
-├── reports/weekly/       # laporan mingguan minggu-01.md … minggu-14.md
-└── docs/                 # proposal, data dictionary, laporan kualitas data
+├── requirements.txt      # dependensi Python (ETL, ML, Streamlit)
+├── data/                 # data mentah & data bersih (<50 MB per file)
+├── etl/                  # skrip extract-transform-load ke warehouse SQLite
+├── warehouse/            # DDL skema bintang (1 fakta + 3 dimensi) & ERD
+├── notebooks/            # notebook 01–07 (EDA, FE, pemodelan, error analysis)
+├── models/               # pipeline train.py, artefak .joblib & metrics.json
+├── app/                  # dashboard interaktif Streamlit & modul prediksi
+├── paper/                # naskah jurnal & lembar jurnal target
+├── reports/weekly/       # laporan mingguan perkembangan kelompok
+└── docs/                 # proposal, kamus data, grafik & laporan analisis
 ```
 
 ## Cara menjalankan
 
 ```bash
 pip install -r requirements.txt
-cd notebooks
-jupyter notebook
+
+# 1. Bangun Data Warehouse SQLite (opsional, database sudah tersedia di repo)
+python etl/run_etl.py
+
+# 2. Latih ulang model ML & perbarui artefak evaluasi
+python models/train.py
+
+# 3. Jalankan Dashboard Analitik & Modul Prediksi Streamlit
+streamlit run app/app.py
 ```
 
-Jalankan notebook **berurutan 01 → 05** (Kernel → Restart & Run All); tiap notebook membaca output
-notebook sebelumnya dari `data/processed/`. Path relatif (`../data/...`), `random_state = 42`.
+Untuk mereproduksi seluruh alur riset dari pembersihan hingga *error analysis*, jalankan notebook di folder `notebooks/` **secara berurutan (`01` → `07`)** menggunakan `random_state = 42`.
 
 ## Alur kerja
 
-Semua perubahan lewat **pull request** (tidak ada push langsung ke `main`), dengan format commit
-*Conventional Commits* + nomor issue. Detail: [CONTRIBUTING.md](CONTRIBUTING.md) dan
-[RENCANA_PROYEK.md](RENCANA_PROYEK.md). Laporan mingguan: [reports/weekly/](reports/weekly/).
+Semua perubahan lewat **pull request** melalui branch fitur tersendiri (dilarang push langsung ke `main`), menggunakan format *Conventional Commits* + nomor issue serta wajib review oleh anggota tim sebelum merge. Panduan kontribusi lengkap: [CONTRIBUTING.md](CONTRIBUTING.md). Laporan mingguan: [reports/weekly/](reports/weekly/).
