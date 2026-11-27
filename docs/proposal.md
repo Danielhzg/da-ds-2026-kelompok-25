@@ -24,14 +24,14 @@ indikator lonjakan, dan akurasi prediksi model (MAE/MAPE) pada periode terbaru.
 ## Tugas pemodelan (sisi DS)
 
 - **Tugas:** regresi harga (dan/atau perubahan harga) cabai di **Pasar Tradisional**.
-- **Baseline:** naif "harga kemarin" (CV MAE Rp1.244 dari hasil UTS) — semua model wajib mengalahkannya.
-- **Metrik:** MAE (utama), RMSE, MAPE; validasi berbasis waktu (train ≤2024, test 2025).
+- **Baseline:** naif "harga kemarin" (CV MAE Rp1.244 pada tahap eksplorasi awal) — seluruh model diuji berbasis pemisahan waktu terhadap tolok ukur naif tersebut.
+- **Metrik:** MAE (utama), RMSE, MAPE; validasi berbasis waktu (train ≤2024, test 2025–2026).
 
 ## Data
 
 - Harga harian: **PIHPS Nasional – Bank Indonesia**, 4 level pasar, 10 tahun (data publik, sumber dicantumkan).
 - Cuaca harian: **Open-Meteo** (CC BY 4.0), titik 3,55° LU 98,68° BT (Medan).
-- Hasil UTS: 6.352 baris bersih, 35 fitur kandidat → 10 fitur terpilih (VIF ≤ 9,61).
+- Tahap eksplorasi awal: 6.352 baris bersih, 35 fitur kandidat → 12 fitur model pohon & 10 fitur model linear (VIF ≤ 9,61).
 
 ## Kebaruan / kontribusi yang direncanakan
 
@@ -41,5 +41,5 @@ indikator lonjakan, dan akurasi prediksi model (MAE/MAPE) pada periode terbaru.
 
 ## Jadwal ringkas
 
-Mengikuti timeline panduan M1–M15 dengan checkpoint CP1 (M2), CP2 (M5), CP3 (M8), CP4 (M11),
-CP5 (M15). Detail per minggu: [../RENCANA_PROYEK.md](../RENCANA_PROYEK.md).
+Mengikuti timeline resmi M1–M15 dengan checkpoint CP1 (M2), CP2 (M5), CP3 (M8), CP4 (M11), dan
+CP5 (M15). Pemantauan progres mingguan: [../reports/weekly/](../reports/weekly/).

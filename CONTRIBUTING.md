@@ -1,6 +1,6 @@
 # Tata Cara Kontribusi — Kelompok 25
 
-Ringkas; aturan lengkap dan indikator penilaian ada di [RENCANA_PROYEK.md](RENCANA_PROYEK.md).
+Pedoman ringkas kolaborasi GitHub untuk menjaga konsistensi kode, keterlacakan isu, dan keseimbangan kontribusi antar anggota.
 
 ## Branch & PR
 
@@ -20,8 +20,9 @@ Ringkas; aturan lengkap dan indikator penilaian ada di [RENCANA_PROYEK.md](RENCA
 
 ## Lintas lapisan
 
-Setiap anggota wajib punya PR ter-merge di sisi **DA** (`etl/`, `warehouse/`, `app/`) **dan** sisi
-**DS** (`notebooks/`, `models/`). Alokasi: lihat RENCANA_PROYEK.md Bagian 3.
+Setiap anggota wajib punya PR ter-merge di sisi **DA** (`etl/`, `warehouse/`, `app/`, `docs/data-dictionary.md`) **dan** sisi **DS** (`notebooks/`, `models/`):
+- **Dame Sisri Rumapea (41426085):** Lead sisi DA (`warehouse/`, `etl/`, dashboard `app/app.py` & `01..03`) + kontribusi DS (`models/model-card.md`).
+- **Daniel Haganta Ginting (41426090):** Lead sisi DS (`notebooks/06-07`, `models/`, `app/pages/04_Prediksi_Harga.py`) + kontribusi DA (`docs/data-dictionary.md`).
 
 ## Issue, label, milestone
 
