@@ -14,7 +14,7 @@ Status  : Hijau
 | *Model Card* (lintas DS) & Laporan Kualitas Data | selesai | [PR #12](https://github.com/Danielhzg/da-ds-2026-kelompok-25/pull/12) (commit `ededfc5`) |
 | Penetapan Jurnal Target SINTA 2 (Jurnal RESTI) & Draf Lengkap Bagian Pendahuluan, Metode, Hasil, Abstrak, Pembahasan, Kesimpulan | selesai | [PR #10](https://github.com/Danielhzg/da-ds-2026-kelompok-25/pull/10) (`bac51f9`) & [PR #13](https://github.com/Danielhzg/da-ds-2026-kelompok-25/pull/13) (`7fc8abc`) |
 | Pemasangan tag checkpoint `v0.1-cp1` s.d. `v0.4-cp4` & GitHub Projects Board 5 kolom | selesai | Tag rilis GitHub & `Board Proyek Kelompok 25` |
-| Deployment aplikasi ke Streamlit Community Cloud (`.streamlit.app`) & uji kegunaan 3–5 pengguna | proses | PR `D6` (`docs/deploy-dan-laporan-m12`) disiapkan; uji kegunaan (`K7`) berjalan setelah URL publik aktif |
+| Deployment aplikasi ke Streamlit Community Cloud (`.streamlit.app`) & uji kegunaan 3–5 pengguna | selesai (deploy) / proses (uji user) | Aplikasi live: https://cabai-medan-k25.streamlit.app/ & `README.md`; uji kegunaan (`K7`) dijalankan pada URL tersebut |
 
 ## 2. Kontribusi anggota
 
@@ -27,6 +27,7 @@ Status  : Hijau
 
 - Commit non-merge pada `main`: **13 commit bermakna** (Daniel: **7**, Dame: **6**) | PR di-merge: **9 PR** (`#5`–`#13`) | Issue ditutup: `#1`, `#2`, `#3`, `#4`.
 - Tag rilis terpasang: `v0.1-cp1`, `v0.2-cp2`, `v0.3-cp3`, `v0.4-cp4`.
+- URL aplikasi online aktif: https://cabai-medan-k25.streamlit.app/
 - Uji integrasi penuh 5 halaman Streamlit (`AppTest` pada `app/app.py` dan `01` s.d. `04`): **0 exception**.
 - Metrik model terbaru (*Pasar Tradisional*, uji *out-of-time* `2025-01-01` s.d. `2026-01-29`, $n=282$):
   - **Random Forest** *(Model Terpilih via CV MAE)*: CV MAE **Rp2.298,16** ($R^2 = 0{,}9181$) | Test MAE **Rp3.335,39**, RMSE **Rp5.558,99**, MAPE **6,85%**, $R^2 = 0{,}9092$ (hari tenang MAE **Rp1.289,10**, MAPE **3,36%**).
@@ -45,7 +46,7 @@ Status  : Hijau
 
 ## 5. Kendala dan bantuan yang dibutuhkan
 
-- Seluruh komponen integrasi (warehouse, ETL, model ML, 5 halaman Streamlit, *Model Card*, *Data Dictionary*, *Error Analysis*, dan draf jurnal terpisah) telah menyatu di `main` dan lolos uji headless; saat ini tinggal menyelesaikan publikasi URL Streamlit Community Cloud serta pengujian kegunaan dengan 3–5 calon pengguna (`docs/laporan-uji-pengguna.md`).
+- Seluruh komponen integrasi (warehouse, ETL, model ML, 5 halaman Streamlit, *Model Card*, *Data Dictionary*, *Error Analysis*, draf jurnal terpisah, serta aplikasi publik https://cabai-medan-k25.streamlit.app/) telah berjalan lancar; langkah tersisa pekan M12 adalah menyelesaikan pengujian kegunaan bersama 3–5 calon pengguna (`docs/laporan-uji-pengguna.md`) sebelum akhir pekan.
 - Rencana lanjutan M13: mengonsolidasikan `paper/01_...` dan `paper/02_...` menjadi `paper/draf-lengkap.md` untuk dikonsultasikan dengan dosen pengampu.
 
 ## 6. Rencana minggu depan

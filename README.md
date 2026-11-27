@@ -7,6 +7,16 @@ Proyek Terintegrasi Data Analitik & Data Science — **Kelompok 25** — IT Del
 | 41426085 | **Dame Sisri Rumapea** | Ketua kelompok — lead sisi Data Analitik (ETL, warehouse, dashboard). DASI + DALIS |
 | 41426090 | **Daniel Haganta Ginting** | Project Manager (laporan mingguan) — lead sisi Data Science (model, evaluasi). DASI |
 
+## Aplikasi Online (Live Demo)
+
+- **URL Publik Streamlit Cloud:** https://cabai-medan-k25.streamlit.app/
+- **Sumber Data Live:** SQLite *Data Warehouse* (`warehouse/cabai_medan.db` melalui view `v_harga_lengkap`) dan artefak model `models/best_model.joblib` (`Random Forest`) + `models/baseline_ridge.joblib`.
+- **Halaman Tersedia:**
+  1. `01_Ringkasan_KPI.py` — 5 kartu KPI berpembanding & deret waktu beranotasi.
+  2. `02_Analisis_Mendalam.py` — 7 visualisasi lanjutan Plotly (heatmap, violin+box, treemap, small multiples, bubble transmisi, markup/volatilitas) + *drill-down* & *cross-filter*.
+  3. `03_Storytelling.py` — Narasi menjawab 3 pertanyaan analitik, *Feature Importance*, & rekomendasi TPID/pedagang/konsumen.
+  4. `04_Prediksi_Harga.py` — Simulasi prediksi harga harian masukan baru, bukti uji 5 skenario operasional, & evaluasi 5 model.
+
 ## Tujuan proyek
 
 Menyiapkan sistem analitik dan model prediksi harga harian **cabai merah keriting di Pasar Tradisional Kota Medan**.
